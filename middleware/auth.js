@@ -9,6 +9,7 @@ const authToken = (req,res,next)=>{
         const error = appError.create('token is required',401,httpStausText.ERROR)
         return next(error)
     }
+    
     const token = header.split(' ')[1]
     try{
     const currentUser = jwt.verify(token,process.env.JWT_KEY)

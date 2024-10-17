@@ -2,9 +2,8 @@ const asyncWrapper = require('../middleware/asyncWraper')
 const Users = require('../models/user.model')
 const appError = require('../utils/appError')
 const httpStausText = require('../utils/httpStatusText')
-const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
 const jwtGen = require('../utils/generateJwt')
+const bcrypt = require('bcrypt')
 
 const getUsers = asyncWrapper(
     async (req,res,next)=>{
@@ -25,6 +24,7 @@ const register = asyncWrapper(
             const error = appError.create('dublicate email',400,httpStausText.FAIL)
             return next(error)
         }
+        
         const hashedPassword = await bcrypt.hash(req.body.password,10)
         const newUser = new Users({
             ...req.body,
@@ -61,8 +61,6 @@ const login = asyncWrapper(
         }
     }
 )
-
-
 
 module.exports={
     getUsers,

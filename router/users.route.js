@@ -1,9 +1,11 @@
 const express = require('express')
+const multer = require('multer')
 const router = express.Router()
+
 const usersController=require('../controllers/users.controller')
 const authToken = require('../middleware/auth')
-const multer = require('multer')
 const appError = require('../utils/appError')
+
 const diskStorage = multer.diskStorage({
     destination:function(req,file,cb){
         cb(null,'uploads')
