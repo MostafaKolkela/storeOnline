@@ -8,8 +8,8 @@ app.use(express.json())
 const mongoose = require('mongoose')
 const cors = require('cors')
 
-const productsRouter = require('./router/product.route')
-const usersRouter = require('./router/users.route')
+const productsRouter = require('./product/route/product.route')
+const usersRouter = require('./user/route/users.route')
 const httpStatusText = require('./utils/httpStatusText')
 
 const uri = process.env.MONGO_URL

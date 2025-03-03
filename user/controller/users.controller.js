@@ -1,8 +1,8 @@
-const asyncWrapper = require('../middleware/asyncWraper')
-const Users = require('../models/user.model')
-const appError = require('../utils/appError')
-const httpStausText = require('../utils/httpStatusText')
-const jwtGen = require('../utils/generateJwt')
+const asyncWrapper = require('../../middleware/asyncWraper')
+const Users = require('../model/user.model')
+const appError = require('../../utils/appError')
+const httpStausText = require('../../utils/httpStatusText')
+const jwtGen = require('../../utils/generateJwt')
 const bcrypt = require('bcrypt')
 
 const getUsers = asyncWrapper(

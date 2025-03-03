@@ -2,10 +2,10 @@ const express = require('express')
 const multer = require('multer')
 const router = express.Router()
 
-const usersController=require('../controllers/users.controller')
-const authToken = require('../middleware/auth')
-const appError = require('../utils/appError')
-const validateUser = require('../middleware/joiUserValidation')
+const usersController=require('../controller/users.controller')
+const authToken = require('../../middleware/auth')
+const appError = require('../../utils/appError')
+const validateUser = require('../../middleware/joiUserValidation')
 
 const diskStorage = multer.diskStorage({
     destination:function(req,file,cb){

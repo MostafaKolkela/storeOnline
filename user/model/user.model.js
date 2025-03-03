@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
-const userRoles=require('../utils/userRoles')
+const userRoles=require('../')
 
 const userSchema = new mongoose.Schema({
     firstName:{
